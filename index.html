@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/ico.png">
+  <link rel="icon" href="/img/ico.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -180,13 +180,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/banner.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+            <span id="subtitle" data-typed-text="只是千千万万分之一"></span>
           
         </div>
 
@@ -224,15 +224,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2023/08/14/hello-world/" target="_self">
-          Hello World
+        <a href="/2023/08/13/cybersecurity_one/" target="_self">
+          网安扫盲第一集
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/14/hello-world/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/13/cybersecurity_one/" target="_self">
         <div>
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
+          2023.08.13 前言虽然说之前混的实验室之类的比赛基本上都打完了，但解放的感觉并未如约而至，并没有那种终于不用干开发，终于润到网安发展的感觉。所以说转变不是光靠等能等出来的，还是得自己去争取啊。 因为一次偶然的教育hvv的机会终于有机会能和学校里大名鼎鼎的网安大手子L神合作，我一直想着能抓住机会学学手法，到时自己应该也就自然而然能悟了。毕竟我也是从小时候开始也多多少少接触过一些。学起来应该会
         </div>
       </a>
 
@@ -240,12 +240,99 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-08-14 19:42" pubdate>
-              2023-08-14
+            <time datetime="2023-08-13 21:40" pubdate>
+              2023-08-13
             </time>
           </div>
         
         
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%BD%91%E5%AE%89/">#网安</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/08/01/CVE-2021-44228/" target="_self">
+          CVE-2021-44228复现
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/01/CVE-2021-44228/" target="_self">
+        <div>
+          CVE-2021-44228 (Apache Log4j)复现 前言因为鄙人才疏学浅，而且专注时间太短，一直不太知道到底要复现一些什么漏洞才能提升自己的打点水平，只能先挑这些大家都耳熟能详的漏洞来尝试复现了。 遥想2021Log4j漏洞刚放出poc，各个我关注的网安up主都在发复现视频，不过当时我应该是刚高考完没多久，或者是大一，对于网安属于是一种随时准备脱离的边缘状态，不过自己一直也不混什么圈子
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-01 00:38" pubdate>
+              2023-08-01
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%BD%91%E5%AE%89/">#网安</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/07/26/CVE-2023-34312/" target="_self">
+          CVE-2023-34312复现
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/07/26/CVE-2023-34312/" target="_self">
+        <div>
+          CVE-2023-34312漏洞复现前言最近在练习内网渗透相关，在之前hw的时候发现只会msf+ms17010的自己在内网或许能够一把梭，但是后渗透阶段的各种操作自己都不熟悉，一旦没有了ms17010自己就傻了眼，自诩网络安全有些经验的自己结果也只是个脚本小子的事实实在是令人懊恼，但经验与实力是积累起来的，在此先从漏洞复现开始吧，之前也做过某些漏洞的复现，但大多都没有留下笔记记录，那么作为第一篇复
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-07-26 23:00" pubdate>
+              2023-07-26
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%BD%91%E5%AE%89/">#网安</a>
+            
+          </div>
         
       </div>
     </article>

@@ -1,0 +1,638 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/ico.png">
+  <link rel="icon" href="/img/ico.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Blu3fat">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="2023.08.13 前言虽然说之前混的实验室之类的比赛基本上都打完了，但解放的感觉并未如约而至，并没有那种终于不用干开发，终于润到网安发展的感觉。所以说转变不是光靠等能等出来的，还是得自己去争取啊。 因为一次偶然的教育hvv的机会终于有机会能和学校里大名鼎鼎的网安大手子L神合作，我一直想着能抓住机会学学手法，到时自己应该也就自然而然能悟了。毕竟我也是从小时候开始也多多少少接触过一些。学起来应该会">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网安扫盲第一集">
+<meta property="og:url" content="http://example.com/2023/08/13/cybersecurity_one/index.html">
+<meta property="og:site_name" content="蓝胖的海岛">
+<meta property="og:description" content="2023.08.13 前言虽然说之前混的实验室之类的比赛基本上都打完了，但解放的感觉并未如约而至，并没有那种终于不用干开发，终于润到网安发展的感觉。所以说转变不是光靠等能等出来的，还是得自己去争取啊。 因为一次偶然的教育hvv的机会终于有机会能和学校里大名鼎鼎的网安大手子L神合作，我一直想着能抓住机会学学手法，到时自己应该也就自然而然能悟了。毕竟我也是从小时候开始也多多少少接触过一些。学起来应该会">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-13T13:40:04.000Z">
+<meta property="article:modified_time" content="2023-08-14T13:42:00.016Z">
+<meta property="article:author" content="Blu3fat">
+<meta property="article:tag" content="网安">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>网安扫盲第一集 - 蓝胖的海岛</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="网安扫盲第一集"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-08-13 21:40" pubdate>
+          2023年8月13日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          33 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">网安扫盲第一集</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="2023-08-13"><a href="#2023-08-13" class="headerlink" title="2023.08.13"></a>2023.08.13</h3><hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>虽然说之前混的实验室之类的比赛基本上都打完了，但解放的感觉并未如约而至，并没有那种终于不用干开发，终于润到网安发展的感觉。所以说转变不是光靠等能等出来的，还是得自己去争取啊。</p>
+<p>因为一次偶然的教育hvv的机会终于有机会能和学校里大名鼎鼎的网安大手子L神合作，我一直想着能抓住机会学学手法，到时自己应该也就自然而然能悟了。毕竟我也是从小时候开始也多多少少接触过一些。学起来应该会比没有底子来得快，而且L神就在现场操作讲解，要是这都学不会难道要让人手把手在键盘上一个字母一个字母地教吗？</p>
+<p>我本来是这么想的。直到实实在在看到L神和金神的操作，我才想起来经典电影《Who am I:No System is Safe》里的台词：“黑客所为，就如同变魔术”。倒不是说像电影里说的是靠的障眼法，而是就如同字面意思:完全看不懂，就像再看魔术。这里抓包更改传入的参数，那里填充脏数据绕过waf上传。这么一来二去，就把别人站点拿下来了，然后打到内网里再让金神来变魔术。我最多就回忆回忆小时候玩的msf操作，帮他们打打ms17010然后得了个“蓝神“的称号，什么“永恒之蓝的神”，想想我都要笑，呜呜呜太fw了。不过在那次hvv中把msf玩爽了。</p>
+<p>要说收获嘛，顶多是把内网渗透的流程熟悉了一遍，要用的工具，还有一些手法。起码玩起来比打点容易，说白了就是脚本小子式的操着工具嗯造就完了。getshell了之后直接上fscan开扫，横向全靠ms17010，没有就差不多寄。更多就是跟隔壁学校一起hvv的师傅学了一手反向代理隧道，还有mimikatz抓密码之类的细小操作，说白了我对自己内网方面不满的就是，也许让我上确实能操作起来，但是也就这样了，对于知识没有系统的总结构建，搭建不起来一个完整的知识体系。这些操作金神和L神自己上也不是不行，只是没必要，他们的精力应该放在继续打点和免杀过马之类的复杂工作上，也就是说，我的工作是可以被替代的，还不具备与他们并肩的实力。</p>
+<p>但是L神在之后接的hvv代打每次进了内网还能拉我一把，还说一起分钱，我简直是想给他哐哐磕头了，真不夸张的说，L神简直是我的电子义父，要是我以后真能玩得更好，能出本书估计半篇篇幅都得写L神，我就是这么敬佩他。</p>
+<p>也因为这个情况，没有L神我就一无是处，打点还没有成功过，唯一成功的那次是教育hvv时内网基本都被蓝队应急了，准备收收心钓鱼的时候我看到nuclei扫到的symfony啥啥RCE漏洞啥的，点进去一看是个symfony的调试模式能看日志的东西。搜poc找到是个nday，现场试着复现却发现没那么一致，没法直接利用，L神也觉得这个没戏。就在要放弃的时候灵光一现想到都可以查日志了直接查登录记录看看管理员密码不久好了。后来找到个用户密码，登录之后再用找到的管理员登录cookie替换一下就进去了。还真是，把站日下来的那一个瞬间，那种快感比🐍了都爽。虽然还是在框架允许的范畴下拿到的管理员，没有getshell，不过想来这也是小时候幻想着成为嗨客以来第一次成功的日下来一个站，简直是要起飞。后来发现日下来的是主站，可以往分站添加管理员，靠着这一手把几个分站用nday给shell了，只能说是唯一的高光时刻了。扯远了，其实想表达的就是自己打点这块太薄弱，等L神和我都毕了业，如果我也想吃这碗饭，靠这个水平是别想了，到时人家也不会带着我这个拖油瓶，若是不趁这个机会好好学学，基本上是毕业即失业了。所以我也想好好学一遍，起码有点打点成功的经历，我也能对自己多点信心，而且这样以来再有hvv或者其他的业务的时候，能多帮上L神一点忙，不像现在被蓝队应急了就只能闲着没事干等L神再shell几个站才有活干，平常自己也能靠着挖挖SRC赚点(现在是，幻想时间)。</p>
+<p>大概背景就是这样，然后在观摩了多次L神打点的过程之后，最深的感触就是经验的差距，L神已经成长成了一个打点终极高手，放在全国都能打的那种，他也说过在日站的过程中无非就是测功能点，然后看有无越权，有无XSS之类的利用点，还有更直接的弱口令之类。但是我不知道哪些参数会造成越权，哪些地方能找到XSS或者sql的注入点，不说正经的哇漏洞，光是hvv这种随心所欲嗯造的场所，我也不知道这个站点是struct2或者weblogic或者tomcat，有没有能直接用工具利用的漏洞，或者是什么致远oa，万户oa，有什么day，我压根不知道，我甚至不知道oa是啥（这就是这篇文章的主题），这也就造成了一个大问题，不说在正经干活的时候不会，甚至在学的时候也不知道该从哪里开始。我是要从特定几个漏洞复现开始呢还是看完漏洞原理然后像以前一样去ctf刷几道题还是找代码来直接上手审计呢。缺少了知识体系的构建，日站变得尤为困难。</p>
+<p>于是在反复的SRC挖掘尝试的过程中，我终于破防了，遇到了一个正常得不能再正常的站点，终点抓POST包随便测测参数，发现大多数不存在的参数都是返回No this method之类的json消息，但是在其中一些(其实也不存在这些参数)情况却返回了一整个404页面，并且看到了ezEIP5.0的字样，搜索啊发现原来是万户的，发现ezEIP5.0有个XSS的CVE，不过没人复现，也找不到一点相关的资料，这么大个魔改的ezEIP(估计是定制的)，不说是不是真有XSS，能在哪里触发我也找不到啊。不测了，关机睡觉。</p>
+<p>基本上我的日站都是这个过程，总结下来可能是空学会了L神的手法了，但是不明白手法背后的意义和原理，只是机械的模仿罢了。</p>
+<p>最近还在不断地被失眠折磨，晚上睡不着觉宿舍还断电，躺在床上除了刷短视频啥也干不了，不然就是听音乐看抽象，任由情绪被虚拟调动，直到五点半天早早亮，来电了继续下床开电脑，日站吧没睡着感觉头疼日不下去，玩游戏吧玩不下去，开着galgame进度半天也推进不动。实在是受够这样的日子了。这一年我一定要成为网安中级高手。</p>
+<h2 id="正题"><a href="#正题" class="headerlink" title="正题"></a>正题</h2><p>扯了这么多，其实这次要记录的也只是几个经常遇到但是不太理解的概念。跟cms,oa,sso有关，它们的名字，作用或许很容易理解，但是为何在渗透工作中时常要对这几个东西保持关注，为何有时发现的某些oa版本就已经一把梭了，这些背后的联系对于我来说才是难以轻易理解的。</p>
+<p>oa，即Office Automation(办公自动化)，在企业中常见，通常包括电子邮件，日程安排，文档管理等功能，用于帮助企业更高效地处理办公事务。</p>
+<p>cms，即Content Management System,内容管理系统，用于网站管理人员能够更轻松地管理网站内容，包括文本，图像，视频等，在网站开发和维护中起重要作用</p>
+<p>sso，即Single Sign On,单点登录，一种身份验证和凭据控制的机制，允许用户在登录一次之后访问多个相关系统，而不需要在每个系统中都输入凭证。</p>
+<p>按照概念解释的话就是这样，很难看出到底为什么它们在渗透工作中能得到如此之高的关注度，但也不是不能理解，oa的话估计是漏洞比较多，谁会不喜欢漏洞多又被大规模使用的系统呢，就像我操着msf进了一堆有ms17010的内网一样，国内众多集成工具包中都集成了各个厂家oa的漏洞利用工具，只要版本与利用条件对应得上，基本就是一把梭，上马准备进内网阶段就完事，估计这类的漏洞也只是在hvv的时候有价值，平常的漏洞挖掘的话都不一定会遇上类似的场景，倒不是说没有，可能只是别人早挖过一遍了怎么可能轮得到我。漏洞挖掘的话估计会偏向于在已有相关代码的情况下进行代审的场景。</p>
+<p>而cms,按照我的观察与推测也是差不多，虽然没看到像各大oa的直接的利用工具，但是似乎存在一些渗透的固定思路，找路径之类的，推测来说可能是挖漏洞和攻击渗透的时候都得注意，不过说是挖漏洞，到底是哪方面的漏洞也不好说，是xss还是csrf或者ssrf,还是rce呢都不好说。</p>
+<p>sso，估计毫无疑问是属于代审的范畴了，只要能够拿下sso，我都不敢想了，连带的使用sso的系统估计都得被拿下，不说能getshell吧，起码管理员账号是拿下了，这个也不好说一定是属于挖漏洞的范畴，如果有大佬现场代审然后利用呢？或者人家本来就留着当0day了，不管是hvv的时候派上用场还是直接转卖可能比厂商给的钱多也不一定。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>其实吧，写这些莫名其妙的东西还是有点收获的，不同于内网渗透环节，你或许可以对那些shellcode，那些攻击的payload一无所知，就像我用着ms17010但是丝毫不知道它的具体细节，只知道反正跟smb本身的漏洞有关，只要知晓了msf那几个模块的使用方法，要用的工具的条件，基本上也能打得似乎有模有样，打得很爽，再加上一点网工的基本原理，也就能熟练使用代理隧道，中转监听器之类的横向技巧，但是要进军打点工作，要对这些漏洞的原理有一定的了解，或者说，要对漏洞有一定的研究，起码L神肯定是这样，他电脑里这些漏洞的相关学习和总结笔记是很多的，有机会真想全部下下来好好研究。我也不知道他对于这些漏洞是什么个研究步骤，大概是先了解漏洞的原理，然后尝试对这类漏洞进行专项挖掘，再结合自己挖掘过程中遇到的不同情况进行相关的总结，记录感悟，最后归档到自己的笔记里，下一次要用的时候直接翻出笔记用就完了，虽然可能不记得相关的具体命令，但是具体的步骤和命令都记录在笔记里，且原理已经被自己摸透了，那么无论是现场的挖掘还是利用都显得有迹可循了。</p>
+<p>接下来就是跟着总结下来的学习路线去学习具体的漏洞然后去做一些专项挖掘了，不过还有一个问题：L神当时刚开始专项挖掘的的时候是怎么知道哪些站点能有这个漏洞哪些没有的呢，我倒希望这只是我万事开头难的小小疑问，而不是路线错误，不然就难搞了。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%BD%91%E5%AE%89/" class="print-no-link">#网安</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>网安扫盲第一集</div>
+      <div>http://example.com/2023/08/13/cybersecurity_one/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Blu3fat</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年8月13日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/01/CVE-2021-44228/" title="CVE-2021-44228复现">
+                        <span class="hidden-mobile">CVE-2021-44228复现</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
